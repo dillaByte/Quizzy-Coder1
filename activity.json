@@ -1,0 +1,20 @@
+{
+    "quizlist": [{
+            "question": "In which form is this an object?",
+            "option1": "If Called in the form obj.fun()",
+            "option3": "If Called in the form var = function(this)"
+        },
+        {
+            "question": "What is the proper tag for javascript?",
+            "option1": "<script>",
+            "option2": "<style>",
+            "option3": "<script/>"
+        },
+        {
+            "question": "Which format is the correct json",
+            "option1": "javascript object notation",
+            "option2": "java object notation",
+            "option3": "javascripts objects on notes"
+        }
+    ]
+}
