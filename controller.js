@@ -58,7 +58,45 @@ function displayQuestion() {
             if (this.id != rnd) {
                 $(stage).append('<div class="feedback2">WRONG</div>');
             }
-            //setTimeout(function(){changeQuestion()},1000);
+            setTimeout(function () {
+                changeQuestion()
+            }, 1000);
         }
     })
 } //display question
+
+function changeQuestion() {
+
+    questionNumber++;
+
+    if (stage == "#game1") {
+        stage2 = "#game1";
+        stage = "#game2";
+    } else {
+        stage2 = "#game2";
+        stage = "#game1";
+    }
+
+    if (questionNumber < numberOfQuestions) {
+        displayQuestion();
+    }
+    //else{displayFinalSlide();}
+
+    $(stage2).animate({
+        "right": "+=800px"
+    }, "slow", function () {
+        $(stage2).css('right', '-1800px');
+        $(stage2).empty();
+    });
+    $(stage).animate({
+        "right": "+=800px"
+    }, "slow", function () {
+        questionLock = false;
+    });
+} //change question
+
+function displayFinalSlide() {
+
+    $(stage).append(" <div class='questionText' >You have finished the quiz!<br><br>Total questions: " + numberOfQuestions + "<br>Correct answers: " + score + "</div>");
+
+} //display final slide
